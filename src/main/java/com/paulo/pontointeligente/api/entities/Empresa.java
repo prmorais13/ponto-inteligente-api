@@ -9,7 +9,10 @@ import java.util.Objects;
 @Entity
 @Table(name = "empresa")
 public class Empresa implements Serializable {
-    private Long id;
+
+	private static final long serialVersionUID = 1L;
+	
+	private Long id;
     private String razaoSocial;
     private String cnpj;
     private Date dataCriacao;
