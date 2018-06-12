@@ -128,7 +128,7 @@ public class Funcionario implements Serializable {
         this.perfil = perfil;
     }
 
-    @Column(name = "data_cricao", nullable = false)
+    @Column(name = "data_criacao", nullable = false)
     public Date getDataCriacao() {
         return dataCriacao;
     }
