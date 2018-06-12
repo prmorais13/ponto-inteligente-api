@@ -10,11 +10,14 @@ import java.util.Objects;
 @Entity
 @Table(name = "lancamento")
 public class Lancamento implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
     private Long id;
     private Date data;
     private String descricao;
     private String localizacao;
-    private Date dataCricao;
+    private Date dataCriacao;
     private Date dataAtualizacao;
     private TipoEnum tipoEnum;
     private Funcionario funcionario;
@@ -56,12 +59,12 @@ public class Lancamento implements Serializable {
     }
 
     @Column(name = "data_criacao", nullable = false)
-    public Date getDataCricao() {
-        return dataCricao;
+    public Date getDataCriacao() {
+        return dataCriacao;
     }
 
-    public void setDataCricao(Date dataCricao) {
-        this.dataCricao = dataCricao;
+    public void setDataCriacao(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
     }
 
     @Column(name = "data_atualizacao", nullable = false)
@@ -100,7 +103,7 @@ public class Lancamento implements Serializable {
     @PrePersist
     public void prePersist() {
         final Date atual = new Date();
-        dataCricao = atual;
+        dataCriacao = atual;
         dataAtualizacao = atual;
     }
 
@@ -125,7 +128,7 @@ public class Lancamento implements Serializable {
                 ", data=" + data +
                 ", descricao='" + descricao + '\'' +
                 ", localizacao='" + localizacao + '\'' +
-                ", dataCricao=" + dataCricao +
+                ", dataCriacao=" + dataCriacao +
                 ", dataAtualizacao=" + dataAtualizacao +
                 ", tipoEnum=" + tipoEnum +
                 ", funcionario=" + funcionario +
