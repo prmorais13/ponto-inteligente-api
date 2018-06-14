@@ -2,6 +2,7 @@ package com.paulo.pontointeligente.api.repositories;
 
 import com.paulo.pontointeligente.api.entities.Lancamento;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
@@ -18,5 +19,5 @@ import java.util.List;
 public interface LancamentoRepository extends JpaRepository<Lancamento, Long> {
 
     List<Lancamento> findByFuncionarioId(@Param("funcionarioId") Long funcionarioId);
-    Page<Lancamento> findByFuncionarioId(@Param("funcionarioId") Long funcionarioId, Pageable pageable);
+    Page<Lancamento> findByFuncionarioId(@Param("funcionarioId") Long funcionarioId, PageRequest pageRequest);
 }
