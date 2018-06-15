@@ -10,7 +10,10 @@ import java.util.Optional;
 public interface LancamentoService {
 
   Page<Lancamento> buscarFuncionarioPorId(Long funcionarioId, PageRequest pageRequest);
+
   Optional<Lancamento> buscarPorId(Long id);
+
   Lancamento persistir(Lancamento lancamento);
+
   void remover(Long id);
 }

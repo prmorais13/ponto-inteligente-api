@@ -15,9 +15,9 @@ import java.util.List;
 @Transactional(readOnly = true)
 @NamedQueries({
         @NamedQuery(name = "LancamentoRepository.findByFuncionarioId",
-        query = "select lanc from Lancamento lanc where lanc.funcionarioId = :funcionarioId")})
+        query = "SELECT lanc FROM Lancamento lanc WHERE lanc.funcionario.id = :funcionarioId")})
 public interface LancamentoRepository extends JpaRepository<Lancamento, Long> {
 
     List<Lancamento> findByFuncionarioId(@Param("funcionarioId") Long funcionarioId);
-    Page<Lancamento> findByFuncionarioId(@Param("funcionarioId") Long funcionarioId, PageRequest pageRequest);
+    Page<Lancamento> findByFuncionarioId(@Param("funcionarioId") Long funcionarioId, Pageable pageable);
 }
