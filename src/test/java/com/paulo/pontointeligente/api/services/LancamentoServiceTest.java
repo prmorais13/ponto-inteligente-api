@@ -75,8 +75,8 @@ public class LancamentoServiceTest {
   func.setDataAtualizacao(new Date());
   func.setDataCriacao(new Date());
   func.setLancamentos(new ArrayList<>());
-  func.setQtdHorasAlmoco(10);
-  func.setQtdHorasTrabalhoDia(5);
+  func.setQtdHorasAlmoco(Float.valueOf(10));
+  func.setQtdHorasTrabalhoDia((float) 5);
   func.setValorHora(new BigDecimal(10.00));
   this.funcionarioService.persistir(this.func);
 
